@@ -1,37 +1,32 @@
 return {
-  {
-
+  "nvim-telescope/telescope.nvim",
+  cmd = { "Telescope" },
+  event = { "CmdlineEnter", "BufRead" },
+  keys = {
+    { "<F4>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>" },
+  },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    -- extensions
+    "lpoto/telescope-docker.nvim",
+    "debugloop/telescope-undo.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
-    event = { "CmdlineEnter" },
-    keys = {
-      { "<F4>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>" },
-    },
-    opts = {
+  },
+  config = function(_, opts)
+    local telescope = require "telescope"
+    local load = telescope.load_extension
+
+    opts = vim.tbl_deep_extend("force", opts, {
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown {},
         },
       },
-    },
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      require("telescope").load_extension "ui-select"
-    end,
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    cmd = { "Telescope" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      -- extensions
-      "lpoto/telescope-docker.nvim",
-      "debugloop/telescope-undo.nvim",
-    },
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      local load = require("telescope").load_extension
-      load "docker"
-      load "undo"
-    end,
-  },
+    })
+
+    telescope.setup(opts)
+    load "docker"
+    load "undo"
+    load "ui-select"
+  end,
 }
