@@ -28,6 +28,23 @@ return {
       "json-lsp",
       "jsonlint",
       "prettier",
+
+      -- make
+      "cmakelang",
+
+      -- docker
+      "dockerfile-language-server",
+      "docker-compose-language-service",
+
+      -- yaml
+      "yaml-language-server",
+
+      -- markdown
+      "markdownlint",
+      "marksman",
+
+      -- github
+      "actionlint",
     },
     ui = {
       icons = {
