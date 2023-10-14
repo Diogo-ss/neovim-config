@@ -123,4 +123,13 @@ return {
       require("glance").setup(opts)
     end,
   },
+  {
+    "fedepujol/move.nvim",
+    keys = {
+      { mode = { "v" }, "<A-j>", ":MoveBlock(1)<CR>" },
+      { mode = { "v" }, "<A-k>", ":MoveBlock(-1)<CR>" },
+      { mode = { "v" }, "<A-h>", ":MoveHBlock(-1)<CR>" },
+      { mode = { "v" }, "<A-l>", ":MoveHBlock(1)<CR>" },
+    },
+  },
 }
