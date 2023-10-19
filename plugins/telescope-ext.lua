@@ -3,7 +3,7 @@ return {
   cmd = { "Telescope" },
   event = { "CmdlineEnter", "BufRead" },
   keys = {
-    { "<F4>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>" },
+    { "<F4>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>", mode = "x" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
