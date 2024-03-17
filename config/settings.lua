@@ -8,7 +8,7 @@ return {
     swapfile = false,
   },
   g = {
-    hydravim = {
+    tokyovim = {
       lazy = {
         lockfile = vim.fn.stdpath "config" .. "/lua/user/data/lazy/lazy-lock.json",
       },
@@ -23,7 +23,7 @@ return {
         branch = "main",
         user_config = {
           branch = "main",
-          remote = "Diogo-ss/hydravim-config",
+          remote = "Diogo-ss/tokyovim-config",
         },
       },
     },

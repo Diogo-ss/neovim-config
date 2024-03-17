@@ -39,7 +39,7 @@ sudo pacman -S curl unzip ripgrep
 ## Install
 
 ```sh
-git clone git@github.com:HydraVim/HydraVim.git ~/.config/nvim
+git clone git@github.com:TokyoVim/TokyoVim.git ~/.config/nvim
 git clone git@github.com:Diogo-ss/neovim-config.git ~/.config/nvim/lua/user
 nvim
 ```
