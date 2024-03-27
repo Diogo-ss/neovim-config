@@ -26,24 +26,24 @@ return {
       end,
     },
     {
-      "theHamsta/nvim-dap-virtual-text",
-      cmd = {
-        "DapVirtualTextEnable",
-        "DapVirtualTextToggle",
-        "DapVirtualTextDisable",
-        "DapVirtualTextForceRefresh",
-      },
-      config = function(_, opts)
-        require("nvim-dap-virtual-text").setup(opts)
-      end,
-    },
-    {
       "jay-babu/mason-nvim-dap.nvim",
       dependencies = { "nvim-dap" },
       cmd = { "DapInstall", "DapUninstall" },
       opts = { handlers = {} },
       config = function(_, opts)
         require("mason-nvim-dap").setup(opts)
+      end,
+    },
+    {
+      "theHamsta/nvim-dap-virtual-text",
+      cmd = {
+        "DapVirtualTextEnable",
+        "DapVirtualTextToggle",
+        "DapVirtualTextDisable",
+        "DapVirtualTextForceRefresh"
+      },
+      config = function(_, opts)
+        require("nvim-dap-virtual-text").setup(opts)
       end,
     },
     {

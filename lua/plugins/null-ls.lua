@@ -9,7 +9,7 @@ return {
   },
   dependencies = {
     "williamboman/mason.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
   },
   config = function(_, opts)
     require("mason").setup()
