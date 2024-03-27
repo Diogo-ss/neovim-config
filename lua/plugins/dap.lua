@@ -40,7 +40,7 @@ return {
         "DapVirtualTextEnable",
         "DapVirtualTextToggle",
         "DapVirtualTextDisable",
-        "DapVirtualTextForceRefresh"
+        "DapVirtualTextForceRefresh",
       },
       config = function(_, opts)
         require("nvim-dap-virtual-text").setup(opts)
