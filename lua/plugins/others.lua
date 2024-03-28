@@ -84,11 +84,6 @@ return {
     end,
   },
   {
-    -- open file in gh
-    "almo7aya/openingh.nvim",
-    cmd = { "OpenInGHRepo", "OpenInGHFile", "OpenInGHFileLines" },
-  },
-  {
     -- see the one line code
     "nacro90/numb.nvim",
     event = { "CmdlineEnter" },
@@ -97,14 +92,18 @@ return {
     end,
   },
   {
-    "aurum77/live-server.nvim",
+    "Diogo-ss/five-server.nvim",
     cmd = {
-      "LiveServer",
-      "LiveServerStart",
-      "LiveServerStop",
+      "FiveServer",
     },
     build = function()
-      require("live_server.util").install()
+      require "fs.utils.install"()
+    end,
+    opts = {
+      notify = false,
+    },
+    config = function(_, opts)
+      require("fs").setup(opts)
     end,
   },
   {

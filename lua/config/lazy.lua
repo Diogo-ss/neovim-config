@@ -4,9 +4,10 @@ return {
   spec = {
     {
       {
+        -- base config.
         "TokyoVim/TokyoVim",
         lazy = false,
-        branch = "dev",
+        branch = "main",
         priority = 10000,
         config = function()
           require("tokyovim").laod()
@@ -19,12 +20,14 @@ return {
       { import = "plugins" },
     },
   },
+
   defaults = { lazy = true },
   ui = {
     icons = {
       lazy = "鈴 ",
     },
   },
+
   lockfile = tokyo_config.dirs.user .. "/data/lazy/lazy-lock.json",
   performance = {
     rtp = {
