@@ -15,6 +15,9 @@ return {
   },
   dependencies = {
     {
+      "nvim-neotest/nvim-nio",
+    },
+    {
       "rcarriga/cmp-dap",
       dependencies = { "nvim-cmp" },
       config = function()
