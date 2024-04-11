@@ -9,20 +9,12 @@
 - database management with dbee
 
 ## Requirements
+
 <details close>
 <summary>neovim 0.8.0+</summary>
 
 ```sh
 sudo pacman -S neovim
-```
-
-</details>
-
-<details close>
-<summary>live-server</summary>
-
-```sh
-npm install -g live-server
 ```
 
 </details>
