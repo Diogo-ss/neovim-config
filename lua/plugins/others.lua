@@ -1,5 +1,9 @@
 return {
   {
+    "folke/which-key.nvim",
+    enabled = false,
+  },
+  {
     -- 'jk' or 'jj' to exit insert mode
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -96,11 +100,15 @@ return {
     cmd = {
       "FiveServer",
     },
+    keys = {
+      { "<leader>fs", "<cmd>FiveServer start<cr>" },
+      { "<leader>fS", "<cmd>FiveServer stop<cr>" },
+    },
     build = function()
-      require "fs.utils.install"()
+      require "fs.utils.install" ()
     end,
     opts = {
-      notify = false,
+      notify = true,
     },
     config = function(_, opts)
       require("fs").setup(opts)
@@ -118,6 +126,12 @@ return {
   {
     "DNLHC/glance.nvim",
     cmd = { "Glance" },
+    keys = {
+      { "gD", "<CMD>Glance definitions<CR>" },
+      { "gR", "<CMD>Glance references<CR>" },
+      { "gY", "<CMD>Glance type_definitions<CR>" },
+      { "gM", "<CMD>Glance implementations<CR>" },
+    },
     config = function(_, opts)
       require("glance").setup(opts)
     end,
@@ -130,5 +144,8 @@ return {
       { mode = { "v" }, "<A-h>", ":MoveHBlock(-1)<CR>" },
       { mode = { "v" }, "<A-l>", ":MoveHBlock(1)<CR>" },
     },
+    config = function()
+      require("move").setup()
+    end,
   },
 }
