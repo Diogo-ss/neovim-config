@@ -1,11 +1,11 @@
 return {
-  {
-    "rcarriga/nvim-notify",
-    lazy = false,
-    init = function()
-      vim.notify = require "notify"
-    end,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   lazy = false,
+  --   init = function()
+  --     vim.notify = require "notify"
+  --   end,
+  -- },
   {
     "folke/noice.nvim",
     -- event = "VeryLazy",
