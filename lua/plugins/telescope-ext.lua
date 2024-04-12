@@ -4,7 +4,7 @@ return {
   event = { "CmdlineEnter", "BufRead" },
   keys = {
     { "<F4>", vim.lsp.buf.range_code_action, mode = "x" },
-    { "<leader>t", "<cmd>Telescope<cr>", mode = "n"}
+    { "<leader>t", "<cmd>Telescope<cr>", mode = "n" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

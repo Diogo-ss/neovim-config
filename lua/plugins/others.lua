@@ -105,7 +105,7 @@ return {
       { "<leader>fS", "<cmd>FiveServer stop<cr>" },
     },
     build = function()
-      require "fs.utils.install" ()
+      require "fs.utils.install"()
     end,
     opts = {
       notify = true,
@@ -126,6 +126,7 @@ return {
   {
     "DNLHC/glance.nvim",
     cmd = { "Glance" },
+    enabled = false,
     keys = {
       { "gD", "<CMD>Glance definitions<CR>" },
       { "gR", "<CMD>Glance references<CR>" },
