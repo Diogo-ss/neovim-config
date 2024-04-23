@@ -16,4 +16,3 @@ vim.g.maplocalleader = " "
 local config = require "config.lazy"
 
 require("lazy").setup(config)
-require("tokyovim").laod()

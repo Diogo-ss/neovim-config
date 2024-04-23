@@ -10,7 +10,7 @@ return {
         branch = "main",
         priority = 10000,
         config = function()
-          require("tokyovim").laod()
+          require("tokyovim").load()
         end,
       },
       { import = "tokyovim.plugins.base" },
