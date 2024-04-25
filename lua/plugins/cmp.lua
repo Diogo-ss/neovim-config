@@ -8,6 +8,9 @@ return {
   config = function()
     local cmp = require "cmp"
     local config = cmp.get_config()
+    local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     vim.list_extend(config.sources, {
       { name = "nvim_lsp_signature_help" },
       { name = "calc" },
