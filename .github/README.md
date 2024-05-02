@@ -1,6 +1,7 @@
 # Neovim Config
 
 ## Features
+
 - unit testing support
 - debug support with dap
 - lsp native autocomplete with cmp
@@ -11,7 +12,7 @@
 ## Requirements
 
 <details close>
-<summary>neovim 0.8.0+</summary>
+<summary>neovim 0.9.5+</summary>
 
 ```sh
 sudo pacman -S neovim
