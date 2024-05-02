@@ -1,6 +1,9 @@
 local tokyo_config = require "config.tokyovim"
 
 return {
+  install = {
+    colorscheme = { "catppuccin" },
+  },
   spec = {
     {
       {

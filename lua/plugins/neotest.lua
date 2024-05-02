@@ -8,6 +8,7 @@ return {
     "nvim-neotest/neotest-python",
     "nvim-neotest/neotest-vim-test",
     "nvim-neotest/neotest-plenary",
+    "olimorris/neotest-phpunit",
   },
   cmd = {
     "Neotest",
@@ -20,6 +21,7 @@ return {
         require "neotest-python",
         require "neotest-vim-test",
         require "neotest-plenary",
+        require "neotest-phpunit",
       },
     }
 

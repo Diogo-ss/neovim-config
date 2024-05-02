@@ -45,6 +45,12 @@ return {
 
       -- github
       "actionlint",
+
+      -- PHP
+      "pretty-php",
+      "phpstan",
+      "phpcs",
+      "php-debug-adapter",
     },
     ui = {
       icons = {
