@@ -47,6 +47,7 @@ return {
       "actionlint",
 
       -- PHP
+      "intelephense"
       "pretty-php",
       "phpstan",
       "phpcs",
