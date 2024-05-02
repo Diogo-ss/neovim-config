@@ -28,15 +28,15 @@ return {
         table.insert(res, round_end)
       end
 
-      if symbol.definition then
-        if #res > 0 then
-          table.insert(res, { " ", "NonText" })
-        end
-        table.insert(res, round_start)
-        table.insert(res, { " ", "SymbolUsageDef" })
-        table.insert(res, { symbol.definition .. " defs", "SymbolUsageContent" })
-        table.insert(res, round_end)
-      end
+      -- if symbol.definition then
+      --   if #res > 0 then
+      --     table.insert(res, { " ", "NonText" })
+      --   end
+      --   table.insert(res, round_start)
+      --   table.insert(res, { " ", "SymbolUsageDef" })
+      --   table.insert(res, { symbol.definition .. " defs", "SymbolUsageContent" })
+      --   table.insert(res, round_end)
+      -- end
 
       if symbol.implementation then
         if #res > 0 then
@@ -53,7 +53,7 @@ return {
 
     require("symbol-usage").setup {
       text_format = text_format,
-      definition = { enabled = true },
+      definition = { enabled = false },
       implementation = { enabled = true },
       vt_position = "end_of_line",
     }

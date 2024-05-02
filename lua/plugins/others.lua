@@ -1,5 +1,98 @@
 return {
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require("catppuccin").setup { flavour = "mocha" }
+      vim.cmd.colorscheme "catppuccin"
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  {
+    "kndndrj/nvim-dbee",
+    lazy = true,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    build = function()
+      require("dbee").install()
+    end,
+    config = function()
+      require("dbee").setup()
+    end,
+  },
+  {
+    "Diogo-ss/42-header.nvim",
+    cmd = { "Stdheader" },
+    keys = { "<F1>" },
+    opts = {
+      default_map = true, -- Default mapping <F1> in normal mode.
+      auto_update = true, -- Update header when saving.
+      git = {
+        enabled = true,
+      },
+    },
+    config = function(_, opts)
+      require("42header").setup(opts)
+    end,
+  },
+  {
+    "terrortylor/nvim-comment",
+    dependencies = {
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          require("ts_context_commentstring").setup {
+            enable_autocmd = false,
+          }
+        end,
+      },
+    },
+    config = function(_, opts)
+      opts.hook = function()
+        require("ts_context_commentstring").update_commentstring()
+      end
+
+      require("nvim_comment").setup(opts)
+    end,
+  },
+  {
+    "folke/neodev.nvim",
+    lazy = false,
+    opts = { library = { plugins = { "neotest" }, types = true } },
+    config = function(_, opts)
+      require("neodev").setup(opts)
+    end,
+  },
+  {
+    "rmagatti/goto-preview",
+    lazy = false,
+    keys = {
+      { "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
+      { "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>" },
+      { "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>" },
+      { "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>" },
+      { "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>" },
+      { "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>" },
+    },
+    config = function()
+      require("goto-preview").setup {
+        border = { "↖", "─", "┐", "│", "┘", "─", "└", "│" },
+        focus_on_open = true,
+        preview_window_title = { enable = true, position = "right" },
+      }
+    end,
+  },
+  {
     "folke/which-key.nvim",
     enabled = false,
   },
@@ -9,6 +102,16 @@ return {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
+    end,
+  },
+  {
+    "Diogo-ss/licenser.nvim",
+    cmd = { "Licenser" },
+    opts = {
+      name = "Diogo Silva",
+    },
+    config = function(_, opts)
+      require("licenser").setup(opts)
     end,
   },
   {
