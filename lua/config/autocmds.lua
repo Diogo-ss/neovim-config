@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup("tokyovim", { clear = true })
 
 -- https://www.reddit.com/r/neovim/comments/zc720y/comment/iyvcdf0/?utm_source=share&utm_medium=web2x&context=3
 vim.on_key(function(char)
@@ -30,5 +31,29 @@ autocmd({ "TextYankPost" }, {
       local based = vim.fn.system("base64 | tr -d '\n'", joined)
       vim.fn.chansend(vim.v.stderr, vim.fn.printf("\x1b]52;;%s\x1b\\", based))
     end
+  end,
+})
+
+autocmd("FileType", {
+  group = augroup,
+  pattern = {
+    "mason",
+    "qf",
+    "help",
+    "man",
+    "notify",
+    "neotest-output",
+    "lspinfo",
+    "lazy",
+    "spectre_panel",
+    "startuptime",
+    "tsplayground",
+    "PlenaryTestPopup",
+    "checkhealth",
+    "TelescopePrompt"
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.keymap.set("n", "q", "<cmd>close!<cr>", { buffer = event.buf, silent = true })
   end,
 })
