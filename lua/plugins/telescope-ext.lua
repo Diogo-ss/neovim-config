@@ -5,6 +5,21 @@ return {
   keys = {
     { "<F4>", vim.lsp.buf.range_code_action, mode = "x" },
     { "<leader>t", "<cmd>Telescope<cr>", mode = "n" },
+    {
+      ";r",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+    },
+    {
+      ";f",
+      function()
+        require("telescope.builtin").find_files {
+          no_ignore = false,
+          hidden = true,
+        }
+      end,
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
